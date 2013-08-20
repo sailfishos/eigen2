@@ -4,11 +4,10 @@ Name:           libeigen2-headers
 License:        GPL v2 or later; LGPL v3 or later
 Group:          Development/Libraries
 Summary:        Lightweight linear algebra C++ template library
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Url:            http://eigen.tuxfamily.org/
 Version:        2.0.17
 Release:        10.1
-Source:         eigen-%{version}.tar.bz2
+Source:         %{name}-%{version}.tar.bz2
 BuildRequires:  fdupes, cmake
 #BuildRequires:  doxygen, graphviz
 #BuildRequires:  tex(latex)
@@ -37,7 +36,7 @@ Group: Documentation
 
 
 %prep
-%setup -q -n %{name}-%{version}/%{name}
+%setup -q -n %{name}-%{version}/eigen2
 
 %build
 cmake -DCMAKE_INSTALL_PREFIX=/usr %{?_with_check}
